@@ -1,0 +1,2 @@
+springboot项目打包后的启动方式：
+进入打包后的jar目录，执行cmd 命令：java -jar ****.jar
