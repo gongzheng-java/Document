@@ -1,0 +1,1 @@
+   1.ClassStyle.xml是创建java类时自动生成的注释样式文件，使用方法：选中Code--》New Java file 后，单击Import..导入即可。

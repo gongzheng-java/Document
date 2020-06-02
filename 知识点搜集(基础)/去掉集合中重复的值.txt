@@ -1,0 +1,25 @@
+1.怎么去掉集合中重复的值？
+ 
+ 方法一：
+        List powerList1 = getUserAccessPoit();
+        List powerList = new ArrayList(); 
+
+        //去掉重复的元素
+        for (int i=0;i<powerList1.size();i++)
+        {
+            String operName_o = (String) powerList1.get(i);
+            boolean repeatFlag = false;
+            for (int j=0;j<powerList.size();j++)
+            {
+                String operName_n = (String) powerList.get(j);
+                if (operName_o.equalsIgnoreCase(operName_n))
+                {
+                    repeatFlag = true;
+                    break;
+                }
+            }
+            if (!repeatFlag){
+                  powerList.add(operName_o);
+            } 
+        }
+

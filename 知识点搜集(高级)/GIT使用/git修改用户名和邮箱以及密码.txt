@@ -1,0 +1,14 @@
+查看当前用户名和邮箱
+
+git config user.name
+git config user.email
+1
+2
+修改
+
+git config --global user.name "zhangsan(新的用户名)"
+git config --global user.email "123456@qq.com(新的邮箱)"
+git config --global user.password"123456(新的密码)"
+//这里的zhangsan和邮箱都是你修改之后的用户名和邮箱
+
+修改完成之后再次查看确认下，是不是自己改后的用户名和邮箱以及密码

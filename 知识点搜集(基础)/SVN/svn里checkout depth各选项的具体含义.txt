@@ -1,0 +1,7 @@
+1、Fully recursive——全递归：检出完整的目录树，包含所有的文件或子目录。
+
+2、Immediate children,including folders——直接子节点，包含文件夹：检出目录，包含其中的文   件或子目录，但是不递归展开子目录。
+
+3、Only file chlidren——仅文件子节点：检出指定目录，包含所有文件，但是不检出任何子目录。
+
+4、Only this item——仅此项：只检出目录。不包含其中的文件或子目录。

@@ -1,0 +1,54 @@
+
+
+maven笔记：
+   1.配置文件pom.xml的pom是对象模型(Project Object Model)的缩写。
+
+   2. maven项目中target目录去用于保存编译结果，编辑好pom.xml文件后，
+右键选择Run As中的Maven install运行后，可以看到target目录中保存的
+编译后的文件。也可以通过Maven Clean清除，该目录中所生成的文件。
+   
+   3.创建maven项目：
+      maven module  表示创建子模块、子项目
+      maven project 表示创建普通maven项目或者父工程
+      maven build 命令执行历史记录
+      maven build...手动执行maven命令
+      
+      选择创建“创建一个简单的工程”。创建好maven项目后会报错，
+因为webapp目录中没有web.xml文件，可以手动创建WEB-INF目录，再创建xml文件；
+也可以通过工具来生成：右键项目-->Java EE Tools工具-->Generate Deployment descriptor Stub 。
+     
+     4.导入maven项目：import后选择maven-->Existing Maven Projects
+
+     4.构建maven索引，提高检索速度：
+       window-->show --> view --> other --> maven--> maven repository ok
+选中Local Repository 右键--> Rebuild Index
+
+     5.调试运行：选中项目右键 --> debug as--> maven build...--> 选中source添加源码 
+-->add 后（选择要调试的项目） 发布项目tomcat：run
+    
+    4.pom.xml文件中使用<properties><properties/>标签来指定版本编号，然后在后面需要
+使用的地方通过${xxx}的形式来访问；<properties><properties/>中的内部标签可以自己定义。
+
+    5.maven中包依赖问题：
+      5.1 第一声明者优先原则，即哪个包的依赖信息写在pom.xml文件的前面，maven优先
+加载该包的信息，类似于排队，谁的信息写在前面，优先加载谁。
+      5.2 路径近者优先原则：直接定义在pom.xml文件中的依赖级别高于传递依赖。
+      5.3 排除依赖：在Dependency Hierarchy模式中选中不需要的依赖包，
+右键-->Exclude Maven Artifact；该方法相当于在pom.xml文件的依赖信息的
+<dependency><dependency/>标签中添加<exclusions><exclusions/>标签。
+      5.4 版本锁定：在pom.xml中写<dependencyManagement><dependencyManagement/>标签
+中指定所需的版本jar包的版本信息，这样maven只会优先加载该标签中的包，而不考虑其他依赖
+关系；推荐使用该方法来加载Jar包信息。
+
+     6.maven 项目的拆分：
+      6.1 创建父工程（和普通maven项目方式一样），但是在packing选项中选择pom.xml
+不能选择jar和war两种方式。
+      6.2 父工程和普通的maven工程的目录结构差异较大。父工程中不能进行编码，父
+工程中pom.xml文件中定义包依赖信息，让子工程继承其依赖，而无需再重新定义。
+      6.3 父工程创建好后需要发不到本地仓库中：选中工程右键-->maven install
+      6.3 创建子工程时，web子工程打选择war方式打包，其他的选择jar方式。
+
+
+     
+
+      

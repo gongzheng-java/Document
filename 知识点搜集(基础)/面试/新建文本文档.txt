@@ -1,0 +1,1 @@
+aababcabccdabcde 获取字符串中每个字母出现的次数

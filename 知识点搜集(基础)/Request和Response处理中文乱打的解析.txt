@@ -1,0 +1,11 @@
+是设置从request中取得的值或从数据库中取出的值
+response.setContentType("text/html;charset=gb2312")是设置页面中为中文编码
+前者是设置动态文字（参数，数据库），后者设置页面静态文字
+
+response.setContentType指定 HTTP 响应的编码,同时指定了浏览器显示的编码.
+response.setCharacterEncoding设置HTTP 响应的编码,如果之前使用response.setContentType设置了编码格式,则使用response.setCharacterEncoding指定的编码格式覆盖之前的设置.与response.setContentType相同的是,调用此方法,必须在getWriter执行之前或者response被提交之前.
+
+
+request.setCharacterEncoding()是你设置获得数据的编码方式。
+response.setCharacterEncoding()是你响应时设置的编码。
+response.setContentType()是设置你响应时的MIME及编码，其中也可以不设置编码，由response.setCharacterEncoding()设置，即response.setContentType(text/html; charset=utf-8)可以写成response.setCharacterEncoding("utf-8")和response.setContentType("text/html")

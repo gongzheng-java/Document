@@ -1,0 +1,42 @@
+1、将一个文件夹下的所有内容复制到另一个文件夹下（将A文件夹内容都复制到B里面）
+
+    cp -r /home/packageA/* /home/cp/packageB/
+  或
+    cp -r /home/packageA/. /home/cp/packageB/
+  这两种方法效果是一样的。
+
+2、将一个文件夹复制到另一个文件夹下
+   cp -r /home/packageA /home/packageB
+
+   运行命令之后packageB文件夹下就有packageA文件夹了。
+
+3、删除一个文件夹及其下面的所有文件
+   rm -rf /home/packageA
+
+   -r表示向下递归，不管有多少级目录，一并删除
+   -f表示直接强行删除，不作任何提示的意思
+
+    删除文件夹下的所有文件，而不删除文件夹本身 （需要进入该文件夹内执行）
+    rm -rf *
+
+4、移动一个文件夹到另一个文件夹下面
+     mv /home/packageA /home/packageB/
+   或
+     mv /home/packageA /home/packageB
+   这两种方法效果是一样的。
+
+5、移动一个文件夹下的所有内容到另一个文件夹下面
+    mv /home/packageA/* /home/packageB/
+
+6、删除文件命令：rm -f 文件名
+   
+   将会强行删除文件，且无提示
+
+   需要注意：
+
+   使用rm -rf要格外注意，linux中没有回收站，慎重删除
+
+7、将文件夹中的某个文件 复制到另一个文件夹中：cp 文件名称 别的文件目录路径
+
+   如 在orz文件夹下有两个子文件夹a和b，a中有文件x.txt，b中无文件。
+    将x.txt复制到b中操作是，在a文件夹中命令 cp x.txt b文件夹路径

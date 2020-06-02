@@ -1,0 +1,5 @@
+web.xml文件中的配置的启动优先级别(依次递减):
+       <context-param></context-param>
+       <listener></listener>
+       <filter></filter>
+       <servlet></servlet>
